@@ -1,28 +1,40 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Navbar from './components/Navbar';
-import StudentsOverview from './components/StudentsOverview';
-import TeachersOverview from './components/TeachersOverview';
-import CoursesOverview from './components/CoursesOverview';
+import DashboardHeader from './components/DashboardHeader';
+import TeacherList from './components/TeacherList';
+import CourseList from './components/CourseList';
+import StudentList from './components/StudentList';
+import StudentStats from './components/StudentStats';
+import GlobalStyle from './styles/GlobalStyle';
+import data from './data/data.json';
 
 const Container = styled.div`
-  font-family: sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 `;
 
-const App = () => {
+function App() {
+  const [teachers, setTeachers] = useState([]);
+  const [courses, setCourses] = useState([]);
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    setTeachers(data.teachers);
+    setCourses(data.courses);
+    setStudents(data.students);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Container>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<StudentsOverview />} />
-          <Route path="/teachers" element={<TeachersOverview />} />
-          <Route path="/courses" element={<CoursesOverview />} />
-        </Routes>
-      </Container>
-    </BrowserRouter>
+    <Container>
+      <GlobalStyle />
+      <DashboardHeader />
+      <StudentStats students={students} />
+      <TeacherList teachers={teachers} />
+      <CourseList courses={courses} />
+      <StudentList students={students} />
+    </Container>
   );
-};
+}
 
 export default App;
