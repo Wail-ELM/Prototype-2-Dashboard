@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Dennis Baptist",
-      "subject": "Communication III",
+      "subject": "Live Visuals",
       "availability": [
         { "day": "Friday", "time": "13:00 - 16:00" }
       ],
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "name": "Bert Heyman",
-      "subject": "Design V",
+      "subject": "Development IV",
       "availability": [
         { "day": "Friday", "time": "09:00 - 12:00" }
       ],
@@ -25,7 +25,7 @@
     {
       "id": 3,
       "name": "Jan Van Caneghem",
-      "subject": "Grow III",
+      "subject": "Design",
       "availability": [
         { "day": "Monday", "time": "13:00 - 16:00" }
       ],
@@ -36,7 +36,7 @@
     {
       "id": 4,
       "name": "Stefan Tilburgs",
-      "subject": "Development V",
+      "subject": "Design II",
       "availability": [
         { "day": "Monday", "time": "09:00 - 12:00" }
       ],
@@ -60,12 +60,12 @@
       ]
     }
   ],
-  "sharedSubjects": ["Internship", "Expert Lab"],
+  "sharedSubjects": ["Internship", "3D"],
 
     "courses": [
         {
           "id": 1,
-          "name": "Communication III",
+          "name": "Live Visuals",
           "teacher": "Dennis Baptist",
           "schedule": [
             { "day": "Friday", "time": "13:00 - 16:00" }
@@ -73,7 +73,7 @@
         },
         {
           "id": 2,
-          "name": "Design V",
+          "name": "Development IV ",
           "teacher": "Bert Heyman",
           "schedule": [
             { "day": "Friday", "time": "09:00 - 12:00" }
@@ -81,7 +81,7 @@
         },
         {
           "id": 3,
-          "name": "Grow III",
+          "name": "Design",
           "teacher": "Jan Van Caneghem",
           "schedule": [
             { "day": "Monday", "time": "13:00 - 16:00" }
@@ -89,7 +89,7 @@
         },
         {
           "id": 4,
-          "name": "Development V",
+          "name": "Design V",
           "teacher": "Stefan Tilburgs",
           "schedule": [
             { "day": "Monday", "time": "09:00 - 12:00" }
@@ -97,7 +97,7 @@
         },
         {
           "id": 5,
-          "name": "Expert Lab",
+          "name": "Final Work",
           "teacher": "Ben Verschooris",
           "schedule": [
             { "day": "Tuesday", "time": "09:00 - 16:00" },
