@@ -1,4 +1,3 @@
-// src/pages/StudentsPage.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import StudentPerformanceChart from '../components/StudentPerformanceChart';
@@ -141,7 +140,7 @@ function StudentsPage({ students }) {
 
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
-    setCurrentPage(1); // Reset to first page when filter changes
+    setCurrentPage(1); 
   };
 
   const openModal = (student) => setSelectedStudent(student);
@@ -196,7 +195,7 @@ function StudentsPage({ students }) {
         courseYPosition += 10;
       });
 
-      yPosition = courseYPosition + 10; // Espace pour le prochain étudiant
+      yPosition = courseYPosition + 10; 
     });
 
     pdf.save('students_data.pdf');
@@ -211,7 +210,6 @@ function StudentsPage({ students }) {
           <option value="1">1st Year</option>
           <option value="2">2nd Year</option>
           <option value="3">3rd Year</option>
-          <option value="4">4th Year</option>
         </Select>
       </FilterContainer>
       <div>
