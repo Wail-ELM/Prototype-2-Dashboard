@@ -1,18 +1,13 @@
+// src/App.js
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import DashboardHeader from './components/DashboardHeader';
-import TeacherList from './components/TeacherList';
-import CourseList from './components/CourseList';
-import StudentList from './components/StudentList';
-import StudentStats from './components/StudentStats';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import TeachersPage from './pages/TeachersPage';
+import CoursesPage from './pages/CoursesPage';
+import StudentsPage from './pages/StudentsPage';
 import GlobalStyle from './styles/GlobalStyle';
 import data from './data/data.json';
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-`;
 
 function App() {
   const [teachers, setTeachers] = useState([]);
@@ -26,14 +21,17 @@ function App() {
   }, []);
 
   return (
-    <Container>
+    <Router>
       <GlobalStyle />
-      <DashboardHeader />
-      <StudentStats students={students} />
-      <TeacherList teachers={teachers} />
-      <CourseList courses={courses} />
-      <StudentList students={students} />
-    </Container>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage students={students} />} />
+          <Route path="teachers" element={<TeachersPage teachers={teachers} />} />
+          <Route path="courses" element={<CoursesPage courses={courses} />} />
+          <Route path="students" element={<StudentsPage students={students} />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

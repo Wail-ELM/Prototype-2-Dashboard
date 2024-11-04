@@ -1,4 +1,4 @@
-// src/components/TeacherList.js
+// src/pages/TeachersPage.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ const TeacherName = styled.h3`
   color: #4CAF50;
 `;
 
-function TeacherList({ teachers }) {
+function TeachersPage({ teachers }) {
   return (
     <TeacherContainer>
       <h2>Teachers</h2>
@@ -36,4 +36,4 @@ function TeacherList({ teachers }) {
   );
 }
 
-export default TeacherList;
+export default TeachersPage;

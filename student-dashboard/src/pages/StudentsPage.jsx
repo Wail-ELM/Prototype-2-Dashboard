@@ -1,4 +1,4 @@
-// src/components/StudentList.js
+// src/pages/StudentsPage.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -14,12 +14,6 @@ const StudentCard = styled.div`
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
 `;
 
 const StudentName = styled.h3`
@@ -40,14 +34,13 @@ const GradeBadge = styled.span`
   display: inline-block;
   padding: 5px 10px;
   border-radius: 12px;
-  font-size: 0.8em;
   color: #fff;
   background-color: ${props => 
     props.grade > 85 ? '#4CAF50' : 
     props.grade > 70 ? '#FFC107' : '#F44336'};
 `;
 
-function StudentList({ students }) {
+function StudentsPage({ students }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredStudents = students.filter(student =>
@@ -67,11 +60,10 @@ function StudentList({ students }) {
         <StudentCard key={student.id}>
           <StudentName>{student.name}</StudentName>
           <p>Year: {student.year}</p>
-          <h4>Grades:</h4>
           <ul>
             {Object.entries(student.courses).map(([course, grade]) => (
               <li key={course}>
-                {course}: <GradeBadge grade={grade}>{grade >= 0 && grade <= 100 ? grade : 'N/A'}</GradeBadge>
+                {course}: <GradeBadge grade={grade}>{grade}</GradeBadge>
               </li>
             ))}
           </ul>
@@ -81,4 +73,4 @@ function StudentList({ students }) {
   );
 }
 
-export default StudentList;
+export default StudentsPage;

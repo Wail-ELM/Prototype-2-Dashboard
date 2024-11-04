@@ -1,4 +1,4 @@
-// src/components/CourseList.js
+// src/pages/CoursesPage.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ const CourseName = styled.h3`
   color: #4CAF50;
 `;
 
-function CourseList({ courses }) {
+function CoursesPage({ courses }) {
   return (
     <CourseContainer>
       <h2>Courses</h2>
@@ -35,4 +35,4 @@ function CourseList({ courses }) {
   );
 }
 
-export default CourseList;
+export default CoursesPage;
