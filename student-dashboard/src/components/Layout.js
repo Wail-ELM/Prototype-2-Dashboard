@@ -1,4 +1,3 @@
-// src/components/Layout.js
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
@@ -6,18 +5,18 @@ import DashboardHeader from './DashboardHeader';
 
 const Nav = styled.nav`
   display: flex;
-  gap: 15px;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+  gap: 20px;
+  padding: 15px;
+  background-color: #f0e9e3;
   border-radius: 8px;
   margin: 20px 0;
   justify-content: center;
 `;
 
 const NavLink = styled(Link)`
-  color: #4CAF50;
+  color: #8c7a6b;
   text-decoration: none;
+  font-weight: 500;
 
   &:hover {
     text-decoration: underline;

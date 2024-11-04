@@ -1,23 +1,23 @@
-// src/pages/CoursesPage.js
 import React from 'react';
 import styled from 'styled-components';
 
 const CourseContainer = styled.section`
   margin: 20px 0;
   padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const CourseCard = styled.div`
-  background-color: #2a2a2a;
+  background-color: #f9f6f1;
   padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
 `;
 
 const CourseName = styled.h3`
-  color: #4CAF50;
+  color: #4b4b4b;
 `;
 
 function CoursesPage({ courses }) {

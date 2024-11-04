@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 import React from 'react';
 import styled from 'styled-components';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
@@ -7,15 +6,18 @@ import { Bar } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const StatsContainer = styled.section`
-  background-color: #1e1e1e;
+  background-color: ${({ theme }) => theme.cardBackground};
+  color: ${({ theme }) => theme.text};
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: 20px 0;
 `;
 
 const ChartTitle = styled.h2`
-  color: #e0e0e0;
+  color: ${({ theme }) => theme.text};
   text-align: center;
+  margin-bottom: 20px;
 `;
 
 function HomePage({ students }) {
@@ -31,8 +33,8 @@ function HomePage({ students }) {
       {
         label: 'Average Grades per Course',
         data: averages,
-        backgroundColor: '#4caf50',
-        borderColor: '#388e3c',
+        backgroundColor: '#b89b72',
+        borderColor: '#8c7a6b',
         borderWidth: 1,
       }
     ]
@@ -43,17 +45,17 @@ function HomePage({ students }) {
     plugins: {
       legend: {
         labels: {
-          color: '#e0e0e0'
+          color: '#4b4b4b'
         }
       }
     },
     scales: {
       x: {
-        ticks: { color: '#e0e0e0' },
+        ticks: { color: '#4b4b4b' },
       },
       y: {
         beginAtZero: true,
-        ticks: { color: '#e0e0e0' },
+        ticks: { color: '#4b4b4b' },
       }
     }
   };
